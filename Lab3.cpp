@@ -36,14 +36,19 @@ int main(){
         cout << "To play, enter 'p' or to quit, enter 'x' >>  ";
         cin >> userResp;
 
-        if(userResp == 'p' || userResp == 'P'){
-            cout << "\nGet ready! THE GAME IS STARTING... " << endl;
-            keepPlaying = true;
-            menuLoop = false;
-        } else if (userResp == 'x' || userResp == 'X'){
-            menuLoop = false;
-        } else {
-            cout << "\nInvalid selection. Please try again." << endl;
+        // evaluate user response
+        switch(userResp){
+            case 'p':
+                cout << "\nGet ready! THE GAME IS STARTING... " << endl;
+                keepPlaying = true;
+                menuLoop = false;
+                break;
+            case 'x':
+                menuLoop = false;
+                break;
+            default:
+                cout << "\nInvalid selection. Please try again." << endl;
+                break;
         }
     }
 
